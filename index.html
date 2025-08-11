@@ -70,7 +70,8 @@
 			{
 				coins -= 1;
 				flour += 1;
-				document.getElementById("flourCount").innerHTML = "Flour: " + flour;
+
+				setContent("flourCount", "Flour: " + flour);
 				updateCoins();
 			}
 		}
@@ -81,7 +82,8 @@
 			{
 				coins -= 1;
 				sugar += 1;
-				document.getElementById("sugarCount").innerHTML = "Sugar: " + sugar;
+
+				setContent("sugarCount", "Sugar: " + sugar);
 				updateCoins();
 			}
 		}
@@ -92,7 +94,8 @@
 			{
 				coins -= 1;
 				eggs += 1;
-				document.getElementById("eggsCount").innerHTML = "Eggs: " + eggs;
+
+				setContent("eggsCount", "Eggs: " + eggs);
 				updateCoins();
 			}
 		}
@@ -103,15 +106,25 @@
 			{
 				cookies -= 1;
 				coins += 5;
-				document.getElementById("cookiesCount").innerHTML = "Cookies: " + cookies;
+				
+				setContent("cookiesCount", "Cookies: " + cookies);
 				updateCoins();
 			}
 		}
 
 		function updateCoins()
 		{
-			document.getElementById("coinsCount").innerHTML = "Coins: " + coins;
+			setContent("coinsCount", "Coins: " + coins)
+
+			//old method of 'setting content':
+			//document.getElementById("coinsCount").innerHTML = "Coins: " + coins;
 		}
+
+		function setContent(elementId, content) //To avoid writing a big line every time!
+		{
+			document.getElementById(elementId).innerHTML = content;
+		}
+
 	</script>
 </body>
 </html>
