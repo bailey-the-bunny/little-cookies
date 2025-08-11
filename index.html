@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>
+			little cookies :3
+		</title>
+	</head>
+
+	<body style="background-color:saddleBrown;">
+
+		<h1 title="this is the title of the game! if you'd like to know more, play!">
+			little cookies
+		</h1>
+		<p>a game about baking cookies, basically :)</p>
+
+		<p id="coinsCount">Coins: 0</p>
+		<p id="cookiesCount">Cookies: 0</p>
+		<p id="flourCount">Flour: 0</p>
+		<p id="sugarCount">Sugar: 0</p>
+		<p id="eggsCount">Eggs: 0</p>
+		<p id="chocolateChipsCount">Chocolate Chips: 0</p>
+
+		<button type="button" onclick="buyFlour();">Buy Flour</button>
+		<button type="button" onclick="buySugar();">Buy Sugar</button>
+		<button type="button" onclick="buyEggs();">Buy Eggs</button>
+		<button type="button" onclick="buyChocolateChips();">Buy Chocolate Chips</button>
+
+
+		<button type="button" onclick="bakeACookie();">Bake A Cookie!</button>
+
+		<script>
+			var coins = 50;
+			var cookies = 0;
+			var flour = 0;
+			var sugar = 0;
+			var eggs = 0;
+			var chocolateChips = 0;
+
+			updateCoins();
+
+			function bakeACookie()
+			{
+				cookies += 1;
+				document.getElementById("cookiesCount").innerHTML = "Cookies: " + cookies;
+			}
+
+			function buyFlour()
+			{
+				if (coins >= 1)
+				{
+					coins -= 1;
+					flour += 1;
+					document.getElementById("flourCount").innerHTML = "Flour: " + flour;
+					updateCoins();
+				}
+			}
+
+			function updateCoins()
+			{
+				document.getElementById("coinsCount").innerHTML = "Coins: " + coins;
+			}
+		</script>
+	</body>
+</html>
