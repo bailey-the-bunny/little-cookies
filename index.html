@@ -1,76 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>
-			little cookies :3
-		</title>
-	</head>
+<head>
+	<title>
+		little cookies :3
+	</title>
+</head>
 
-	<body style="background-color:saddleBrown;">
+<body style="background-color:saddleBrown;">
 
-		<h1 title="this is the title of the game! if you'd like to know more, play!">
-			little cookies
-		</h1>
-		<p>a game about baking cookies, basically :)</p>
+	<h1 title="this is the title of the game! if you'd like to know more, play!">
+		little cookies
+	</h1>
+	<p>a game about baking cookies, basically :)</p>
 
-		<!-- inventory items -->
-		<p id="coinsCount">Coins: 0</p>
-		<p id="cookiesCount">Cookies: 0</p>
-		<p id="flourCount">Flour: 0</p>
-		<p id="sugarCount">Sugar: 0</p>
-		<p id="eggsCount">Eggs: 0</p>
-		<p id="chocolateChipsCount">Chocolate Chips: 0</p>
+	<!-- inventory items -->
+	<p id="coinsCount">Coins: 0</p>
+	<p id="cookiesCount">Cookies: 0</p>
+	<p id="flourCount">Flour: 0</p>
+	<p id="sugarCount">Sugar: 0</p>
+	<p id="eggsCount">Eggs: 0</p>
+	<p id="chocolateChipsCount">Chocolate Chips: 0</p>
 
-		<!-- action buttons -->
-		<button type="button" onclick="buyFlour();">Buy Flour</button>
-		<button type="button" onclick="buySugar();">Buy Sugar</button>
-		<button type="button" onclick="buyEggs();">Buy Eggs</button>
-		<!-- future additional ingredient
-		<button type="button" onclick="buyChocolateChips();">Buy Chocolate Chips</button>
-		-->
+	<!-- action buttons -->
+	<button type="button" onclick="buyFlour();">Buy Flour</button>
+	<button type="button" onclick="buySugar();">Buy Sugar</button>
+	<button type="button" onclick="buyEggs();">Buy Eggs</button>
+	<!-- future additional ingredient
+	<button type="button" onclick="buyChocolateChips();">Buy Chocolate Chips</button>
+	-->
 
-		<button type="button" onclick="bakeACookie();">Bake A Cookie!</button>
+	<button type="button" onclick="bakeACookie();">Bake A Cookie!</button>
 
-		<!-- javascript -->
-		<script>
+	<!-- javascript -->
+	<script>
 
-			// variables
-			var coins = 50;
-			var cookies = 0;
-			var flour = 0;
-			var sugar = 0;
-			var eggs = 0;
+		// variables
+		var coins = 50;
+		var cookies = 0;
+		var flour = 0;
+		var sugar = 0;
+		var eggs = 0;
 
-			/* future ingredient :)
-			var chocolateChips = 0;
-			*/
+		/* future ingredient :)
+		var chocolateChips = 0;
+		*/
 
-			// methods
-			updateCoins();
+		// methods
+		updateCoins();
 
-			function bakeACookie()
+		function bakeACookie()
+		{
+			if (flour >= 1 && sugar >= 1 && eggs >= 1)
 			{
+				flour -= 1;
+				sugar -= 1;
+				eggs -= 1;
 				cookies += 1;
 				document.getElementById("cookiesCount").innerHTML = "Cookies: " + cookies;
+				document.getElementById("flourCount").innerHTML = "Flour: " + flour;
+				document.getElementById("sugarCount").innerHTML = "Sugar: " + sugar;
+				document.getElementById("eggsCount").innerHTML = "Eggs: " + eggs;
 			}
+		}
 
-			function buyFlour()
+		function buyFlour()
+		{
+			if (coins >= 1)
 			{
-				if (coins >= 1)
-				{
-					coins -= 1;
-					flour += 1;
-					document.getElementById("flourCount").innerHTML = "Flour: " + flour;
-					updateCoins();
-				}
+				coins -= 1;
+				flour += 1;
+				document.getElementById("flourCount").innerHTML = "Flour: " + flour;
+				updateCoins();
 			}
+		}
 
-			function buySugar
-
-			function updateCoins()
+		function buySugar()
+		{
+			if (coins >= 1)
 			{
-				document.getElementById("coinsCount").innerHTML = "Coins: " + coins;
+				coins -= 1;
+				sugar += 1;
+				document.getElementById("sugarCount").innerHTML = "Sugar: " + sugar;
+				updateCoins();
 			}
-		</script>
-	</body>
+		}
+
+		function buyEggs()
+		{
+			if (coins >= 1)
+			{
+				coins -= 1;
+				eggs += 1;
+				document.getElementById("eggsCount").innerHTML = "Eggs: " + eggs;
+				updateCoins();
+			}
+		}
+
+		function updateCoins()
+		{
+			document.getElementById("coinsCount").innerHTML = "Coins: " + coins;
+		}
+	</script>
+</body>
 </html>
