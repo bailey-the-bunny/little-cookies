@@ -13,6 +13,7 @@
 		</h1>
 		<p>a game about baking cookies, basically :)</p>
 
+		<!-- inventory items -->
 		<p id="coinsCount">Coins: 0</p>
 		<p id="cookiesCount">Cookies: 0</p>
 		<p id="flourCount">Flour: 0</p>
@@ -20,15 +21,18 @@
 		<p id="eggsCount">Eggs: 0</p>
 		<p id="chocolateChipsCount">Chocolate Chips: 0</p>
 
+		<!-- action buttons -->
 		<button type="button" onclick="buyFlour();">Buy Flour</button>
 		<button type="button" onclick="buySugar();">Buy Sugar</button>
 		<button type="button" onclick="buyEggs();">Buy Eggs</button>
 		<button type="button" onclick="buyChocolateChips();">Buy Chocolate Chips</button>
 
-
 		<button type="button" onclick="bakeACookie();">Bake A Cookie!</button>
 
+		<!-- javascript -->
 		<script>
+
+			// variables
 			var coins = 50;
 			var cookies = 0;
 			var flour = 0;
@@ -36,6 +40,7 @@
 			var eggs = 0;
 			var chocolateChips = 0;
 
+			// methods
 			updateCoins();
 
 			function bakeACookie()
