@@ -57,10 +57,11 @@
 				sugar -= 1;
 				eggs -= 1;
 				cookies += 1;
-				document.getElementById("cookiesCount").innerHTML = "Cookies: " + cookies;
-				document.getElementById("flourCount").innerHTML = "Flour: " + flour;
-				document.getElementById("sugarCount").innerHTML = "Sugar: " + sugar;
-				document.getElementById("eggsCount").innerHTML = "Eggs: " + eggs;
+				
+				updateFlour();
+				updateSugar();
+				updateEggs();
+				updateCookies();
 			}
 		}
 
@@ -71,7 +72,7 @@
 				coins -= 1;
 				flour += 1;
 
-				setContent("flourCount", "Flour: " + flour);
+				updateFlour();
 				updateCoins();
 			}
 		}
@@ -83,7 +84,7 @@
 				coins -= 1;
 				sugar += 1;
 
-				setContent("sugarCount", "Sugar: " + sugar);
+				updateSugar();
 				updateCoins();
 			}
 		}
@@ -95,7 +96,7 @@
 				coins -= 1;
 				eggs += 1;
 
-				setContent("eggsCount", "Eggs: " + eggs);
+				updateEggs();
 				updateCoins();
 			}
 		}
@@ -106,10 +107,30 @@
 			{
 				cookies -= 1;
 				coins += 5;
-				
-				setContent("cookiesCount", "Cookies: " + cookies);
+
+				updateCookies();
 				updateCoins();
 			}
+		}
+
+		function updateFlour()
+		{
+			setContent("flourCount", "Flour: " + flour);
+		}
+
+		function updateSugar()
+		{
+			setContent("sugarCount", "Sugar: " + sugar);
+		}
+
+		function updateEggs()
+		{
+			setContent("eggsCount", "Eggs: " + eggs);
+		}
+
+		function updateCookies()
+		{
+			setContent("cookiesCount", "Cookies: " + cookies);
 		}
 
 		function updateCoins()
