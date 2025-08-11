@@ -30,6 +30,7 @@
 	-->
 
 	<button type="button" onclick="bakeACookie();">Bake A Cookie!</button>
+	<button type="button" onclick="sellACookie();">Sell A Cookie :)</button>
 
 	<!-- javascript -->
 	<script>
@@ -92,6 +93,17 @@
 				coins -= 1;
 				eggs += 1;
 				document.getElementById("eggsCount").innerHTML = "Eggs: " + eggs;
+				updateCoins();
+			}
+		}
+
+		function sellACookie()
+		{
+			if (cookies >= 1)
+			{
+				cookies -= 1;
+				coins += 5;
+				document.getElementById("cookiesCount").innerHTML = "Cookies: " + cookies;
 				updateCoins();
 			}
 		}
